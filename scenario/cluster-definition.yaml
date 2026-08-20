@@ -1,0 +1,45 @@
+scenario:
+  name: lazarus-lab
+  purpose: disposable recovery and rebuild practice
+  data_classification: synthetic-only
+
+platform:
+  primary_orchestrator: kubernetes
+  environment: vm_or_local_lab
+
+nodes:
+  control_plane:
+    count: 1
+    role: cluster-control
+  workers:
+    count: 2
+    role: workload-execution
+
+minimum_services:
+  dns_required: true
+  scheduler_required: true
+  networking_required: true
+  stateful_test_service_required: true
+  simple_stateless_test_service_required: true
+
+state:
+  persistent_test_data: synthetic
+  source_control_is_configuration_truth: true
+  irreplaceable_data_allowed: false
+
+recovery_objectives:
+  # Fill these during Mission 00 rather than accepting arbitrary defaults.
+  target_rto_minutes: null
+  target_rpo_minutes: null
+
+failure_domains:
+  - worker
+  - network_or_dns
+  - control_plane
+  - state_or_storage
+  - configuration_drift
+
+rules:
+  - All destructive tests must stay inside disposable lab resources.
+  - A service being reachable is not the same as the system being fully recovered.
+  - Hidden/manual configuration does not count as source-controlled recovery.
