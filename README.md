@@ -2,6 +2,17 @@
 
 > **The cluster is going to die. Your job is to decide how much can fail, how fast it can recover, and whether you can bring the whole thing back from source-controlled truth.**
 
+## Project status
+
+| Field | Current state |
+|---|---|
+| **Status** | **Planned — resilience work begins later in the 52-week roadmap** |
+| **Current stage** | Campaign authored; no recovery time, RTO/RPO result, or rebuild is claimed complete |
+| **Lab environment** | Laptop-scale VMs/containers/lightweight cluster components; production-scale failure behavior is not implied |
+| **Evidence rule** | Recovery is demonstrated only when function is validated after failure; “service started” alone is not completion evidence |
+| **Last plan sync** | 2026-08-19 |
+| **License** | No open-source license is granted unless an explicit license is added later |
+
 ## Skills you will build
 
 - Multi-node Linux infrastructure concepts
