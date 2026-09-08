@@ -2,15 +2,10 @@
 
 > **The cluster is going to die. Decide how much can fail, how fast it can recover, and whether it can be rebuilt from source-controlled truth.**
 
-## Project status
+## Lab environment
 
-| Field | Current state |
-|---|---|
-| **Status** | **Planned — resilience work begins in Weeks 29–30 and re-enters later blocks** |
-| **Current stage** | Campaign authored; no recovery time, RTO/RPO result, or rebuild is claimed complete |
-| **Lab environment** | Laptop-scale VMs/containers/lightweight cluster components; production-scale behavior is not implied |
-| **Evidence rule** | Recovery counts only when intended function is validated after failure; “service started” is not enough |
-| **Last plan sync** | 2026-08-19 |
+- **Environment:** Laptop-scale RHEL VMs/containers/lightweight cluster components; production-scale behavior is not implied.
+- **Evidence rule:** Recovery counts only when intended function is validated after failure; “service started” is not enough.
 
 ## Purpose
 
@@ -29,7 +24,7 @@ The campaign deliberately removes workers, networking/DNS, control-plane pieces,
 - configuration drift and idempotency
 - backups/recovery boundaries
 - RTO/RPO definition and measurement
-- rebuild automation, runbooks, validation, and postmortems
+- RHEL rebuild automation, runbooks, validation, and postmortems
 
 ## Resurrection campaign
 
