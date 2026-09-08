@@ -4,6 +4,9 @@ scenario:
   data_classification: synthetic-only
 
 platform:
+  guest_os: rhel
+  default_rhel_major_version: 10
+  # For mentored work, match the supported RHEL major version used by the HPC team.
   primary_orchestrator: kubernetes
   environment: vm_or_local_lab
 
@@ -40,6 +43,6 @@ failure_domains:
   - configuration_drift
 
 rules:
-  - All destructive tests must stay inside disposable lab resources.
+  - All destructive tests must stay inside disposable RHEL lab resources.
   - A service being reachable is not the same as the system being fully recovered.
   - Hidden/manual configuration does not count as source-controlled recovery.
